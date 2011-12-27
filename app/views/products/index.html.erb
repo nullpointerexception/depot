@@ -3,7 +3,7 @@
 	<table>
 		<%@products.each do|product|%>
 		<tr class="<%= cycle('list_line_odd', 'list_line_even')%>">
-			<td> <%= image_tag(product.image_url,:class=> 'list_image')%> </td>
+			<td> <%= link_to (image_tag(product.image_url,:class=> 'list_image')), product %> </td>
 			<td class="list_description">
 			<dl>
 				<dt>
@@ -11,6 +11,9 @@
 				</dt>
 				<dd>
 					<%= link_to (truncate(strip_tags(product.description), :length=>80)), product %>
+				</dd>
+				<dd>
+					<%= product.price %>
 				</dd>
 			</dl></td>
 			<td class="list_actions">

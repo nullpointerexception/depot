@@ -7,12 +7,13 @@
 
 <p>
   <b>Description:</b>
-  <%= @product.description %>
+  <%= strip_tags(@product.description) %>
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= @product.image_url %>
+  <b>Image:</b>
+  <br/>
+  <%= image_tag(@product.image_url) %>
 </p>
 
 <p>
