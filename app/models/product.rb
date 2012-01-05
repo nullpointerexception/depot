@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+    default_scope :order => 'title'
+    
     validates_presence_of :title, :description, :image_url, :message => 'must be filled in'
     validates :title, :length => { :minimum => 10 }
     validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
